@@ -1,2 +1,2 @@
 # QuoteGenerator
-Simple website that displays some famous quotes
+Simple website that displays famous quotes
