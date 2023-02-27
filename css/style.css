@@ -34,7 +34,13 @@
 .generate-new-quote{
   width: 1em;
   height: 1em;
-  transition: 0.5s transform;
+  transition: 0.5s transform, 0.5s rotate;
+  animation-duration: 1s;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
 }
 
 .generate-new-quote:hover{
@@ -51,7 +57,7 @@
 }
 
 .loading{
-  animation: 1s spin linear infinite;
+  animation-play-state: running;
 }
 
 main{
