@@ -21,6 +21,13 @@
   position: absolute;
 }
 
+.quote-container{
+  text-align: center;
+  display: flex;  
+  flex-direction: column;
+  gap: 1em;
+}
+
 .quote-text{
   position: relative;
   text-align: center;
@@ -29,11 +36,13 @@
 
 .quote-author{
   font-weight: 600;
+  margin-bottom: 1em;
 }
 
 .generate-new-quote{
   width: 1em;
   height: 1em;
+  margin-top: 0em;
   transition: 0.5s transform, 0.5s rotate;
   animation-duration: 1s;
   animation-name: spin;
@@ -46,7 +55,25 @@
 .generate-new-quote:hover{
   transform: scale(1.3)
 }
+@keyframes placeholder-animation{
+  0%{
+    background-position: 0 0;
+  }
+  100%{
+    background-position: 100% 0%;
+  }
+}
 
+placeholder{
+  background-image: linear-gradient(30deg, var(--darkest-background-color), var(--darker-background-color), var(--darkest-background-color), var(--darker-background-color)); 
+  border-radius: 10px;
+  background-position: 0 0;
+  background-size: 400% 100%;
+  height: 1.2em;
+  display: block;
+  animation: 4s infinite linear placeholder-animation;
+  width: 5em;
+}
 @keyframes spin{
   from{
     rotate: 0deg;
@@ -68,7 +95,6 @@ main{
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
-  gap: 1em;
   max-width: 800px;
 }
 
