@@ -14,11 +14,10 @@ getQuote().then((data)=>{
 
     main.appendChild(quoteAuthor)
     quoteAuthor.classList.add("quote-author")
-    
-    refreshButton.classList.remove("loading")
 
     quoteText.innerText = data.content
     quoteAuthor.innerText = data.author
+    refreshButton.classList.remove("loading")
   }
 )
 refreshButton.addEventListener("click", ()=>{
