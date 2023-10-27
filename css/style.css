@@ -26,7 +26,7 @@ body{
 button{
   all:unset;
   padding:1rem;
-  font-size:1.5rem;
+  font-size:1.35rem;
   font-family:inherit;
   border:0;
   background:none;
@@ -38,7 +38,7 @@ button{
 }
 .quote-container{
   text-align:center;
-  font-size:1.5rem;
+  font-size:1.35rem;
   display:flex;
   justify-content:center;
   align-items:center;
