@@ -4,19 +4,18 @@
     <script src="js/script.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
     <meta charset="UTF-8">
     <title>Quote generator</title>
   </head>
   <body>
-    <main>
-      <div class="quote-container">
-      </div>
-      <svg xmlns="http://www.w3.org/2000/svg" class="generate-new-quote loading"  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-         <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4"></path>
-         <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4"></path>
-      </svg>
-    </main>
+    <div class='quote-container'>
+      <p class='js-quote-label'></p>
+      <p class='js-author-label author-label'></p>
+    </div>
+    <button class='js-refresh-button'>
+      <i class="ti ti-refresh"></i>
+    </button>
   </body>
 </html> 
 

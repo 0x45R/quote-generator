@@ -1,31 +1,30 @@
-const refreshButton = document.querySelector(".generate-new-quote")
-const main = document.querySelector(".quote-container")
-const quoteText = document.createElement("p")
-const quoteAuthor = document.createElement("p")
-
+const refreshButton = document.querySelector(".js-refresh-button")
+const quoteLabel = document.querySelector('.js-quote-label');
+const authorLabel = document.querySelector('.js-author-label');
+const quoteContainer = document.querySelector('.quote-container');
 
 async function getQuote(){
   const response = await fetch("https://api.quotable.io/random", { headers: {"Content-Type":"application/json"}})
   return response.json()
 }
 
-function assignData(data){
-  quoteText.innerText = data.content
-  quoteAuthor.innerText = data.author
-  refreshButton.classList.remove("loading")
+const fetchQuote = () => {
+  quoteContainer.classList.add("hidden")
+  refreshButton.classList.add("loading")
+  getQuote().then(assignQuote)
 }
 
-getQuote().then((data)=>{
-    main.appendChild(quoteText)
-    quoteText.classList.add('quote-text')
+const assignQuote = (data) => {
+  console.log(data);
+  const {author, content} = data;
+  quoteLabel.innerText = content;
+  authorLabel.innerText = author;
+  refreshButton.classList.remove("loading")
+  quoteContainer.classList.remove("hidden")
+}
 
-    main.appendChild(quoteAuthor)
-    quoteAuthor.classList.add("quote-author")
-    
-    assignData(data);
-  }
-)
+fetchQuote();
+
 refreshButton.addEventListener("click", ()=>{
-  refreshButton.classList.add("loading")
-  getQuote().then(assignData)
+  if(!refreshButton.classList.contains("loading")) fetchQuote();
 })
