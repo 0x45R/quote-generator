@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
     <script src="js/script.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
@@ -10,14 +10,14 @@
   </head>
   <body>
     <header>
-      <a class='header__return-button' href="https://0x45r.github.io"><i class='ti ti-arrow-back'></i></a>
+      <a aria-label='Return to home page' class='header__return-button' href="https://0x45r.github.io"><i class='ti ti-arrow-back'></i></a>
     </header>
     <main>
       <div class='quote-container'>
         <p class='js-quote-label'></p>
         <p class='js-author-label author-label'></p>
       </div>
-      <button class='js-refresh-button'>
+      <button id='new-quote' aria-label='Generate new quote' class='js-refresh-button'>
         <i class="ti ti-refresh"></i>
       </button>
     </main>
